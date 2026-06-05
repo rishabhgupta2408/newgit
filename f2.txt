@@ -1,1 +1,54 @@
-welcome to hello world
+ubuntu@ip-192-168-1-212:~$ sudo su
+root@ip-192-168-1-212:/home/ubuntu# apt update
+
+root@ip-192-168-1-212:/home/ubuntu# ssh-keygen -t rsa -b 4096
+root@ip-192-168-1-212:/home/ubuntu# cat /root/.ssh/id_rsa.pub
+root@ip-192-168-1-212:/home/ubuntu# cd /root/.ssh
+root@ip-192-168-1-212:~/.ssh# nano config
+root@ip-192-168-1-212:~/.ssh# ll
+root@ip-192-168-1-212:~/.ssh# chmod 600 config
+root@ip-192-168-1-212:~/.ssh# ll
+root@ip-192-168-1-212:~/.ssh# cd /home/ubuntu/
+root@ip-192-168-1-212:/home/ubuntu# git clone ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/ltmdevops
+root@ip-192-168-1-212:/home/ubuntu# ll
+
+root@ip-192-168-1-212:/home/ubuntu# cd ltmdevops/
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops# ll
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops# git clone https://github.com/aws-samples/eb-tomcat-snakes
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops# git init
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops# cd eb-tomcat-snakes/
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# ls
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# ll
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# rm -rf .git
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git init
+Initialized empty Git repository in /home/ubuntu/ltmdevops/eb-tomcat-snakes/.git/
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git remote -v
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git remote add codecommit ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/ltmdevops
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git remote -v
+
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes#  git config --global user.email "abc@ltm.com"
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes#  git config --global user.name "abc"
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git add . && git commit -m"added file"
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git push codecommit master
+ * [new branch]      master -> master
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes#
+
+codebuild:
+cb--create pro-- default - sou: AWScc--rep--container--buildspec in nano
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# nano buildspec.yml
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git push codecommit master
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git add buildspec.yml && git commit -m "added buildspec"
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git status
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git push codecommit master
+
+codedeploy:
+appli--ec2/ --depl group-- service role-- IAM role --create rv--awscodedeploy --role n-- attach policy -e2, build,pipepline, s3, deplyfull- 
+arn in service role- 
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# nano appspec.yml
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# nano deploy.sh
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# ll
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git add deploy.sh appspec.yml && git commit -m "app & deploy"
+root@ip-192-168-1-212:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git push codecommit master
+
+
+
