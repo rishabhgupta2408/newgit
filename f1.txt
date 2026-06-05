@@ -71,6 +71,8 @@ root@ip-192-168-1-126:/home/ubuntu# cat /root/.ssh/id_rsa.pub
 root@ip-192-168-1-126:/home/ubuntu# mkdir git-1
 root@ip-192-168-1-126:/home/ubuntu# cd git-1
 root@ip-192-168-1-126:/home/ubuntu/git-1# git init
+gitremote add origin
+nano f1.txt
 root@ip-192-168-1-126:/home/ubuntu/git-1# ls
 root@ip-192-168-1-126:/home/ubuntu/git-1# git add f1.txt && git commit -m "new file"
 root@ip-192-168-1-126:/home/ubuntu/git-1# git push origin master
