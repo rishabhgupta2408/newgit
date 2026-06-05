@@ -1,1 +1,91 @@
-WELCOME TO LTM MAHAPE
+ubuntu@ip-192-168-1-177:~$ sudo su
+root@ip-192-168-1-177:/home/ubuntu# apt update
+root@ip-192-168-1-177:/home/ubuntu# ssh-keygen -t rsa -b 4096
+root@ip-192-168-1-177:/home/ubuntu# cat /root/.ssh/id_rsa.pub
+root@ip-192-168-1-177:/home/ubuntu# cd /root/.ssh
+root@ip-192-168-1-177:~/.ssh# nano config
+root@ip-192-168-1-177:~/.ssh# cd /
+root@ip-192-168-1-177:/# cd /home/
+root@ip-192-168-1-177:/home# ubuntu/
+root@ip-192-168-1-177:/home# cd /ubuntu/
+root@ip-192-168-1-177:/home# cd /home/ubuntu/
+root@ip-192-168-1-177:/home/ubuntu# git clone ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/ltmdevops
+root@ip-192-168-1-177:/home/ubuntu# ls
+ltmdevops
+root@ip-192-168-1-177:/home/ubuntu# cd ltmdevops/
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops# ll
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops# git clone https://github.com/aws-samples/eb-tomcat-snakes
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops# git init
+Reinitialized existing Git repository in /home/ubuntu/ltmdevops/.git/
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops# git remote -v
+origin  ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/ltmdevops (fetch)
+origin  ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/ltmdevops (push)
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops# git status
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops# cd eb-tomcat-snakes/
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# ls
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# ll
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# rm -rf .git
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git init
+Initialized empty Git repository in /home/ubuntu/ltmdevops/eb-tomcat-snakes/.git/
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git remote -v
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git remote add codecommit ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/ltmdevops
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git remote -v
+codecommit      ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/ltmdevops (fetch)
+codecommit      ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/ltmdevops (push)
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git add . && git commit -m "added file"
+
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git config --global user.email "abc@email.com"
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git config --global user.name "abc"
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git add . git codecommit -m "added"
+                          
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git add . git commit -m "added"
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git add . && git commit -m "added"
+
+ root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes# git push codecommit master
+root@ip-192-168-1-177:/home/ubuntu/ltmdevops/eb-tomcat-snakes#
+
+
+AmazonEC2FullAccess
+AWS managed
+1
+AmazonS3FullAccess
+AWS managed
+1
+AWSCodeBuildAdminAccess
+AWS managed
+1
+AWSCodeCommitFullAccess
+AWS managed
+2
+AWSCodeDeployRole
+AWS managed
+1
+AWSCodePipeline_FullAcce
+
+
+
+
+
+root@ip-192-168-1-126:/home/ubuntu# ssh-keygen -t rsa -b 4096
+root@ip-192-168-1-126:/home/ubuntu# cat /root/.ssh/id_rsa.pub
+root@ip-192-168-1-126:/home/ubuntu# mkdir git-1
+root@ip-192-168-1-126:/home/ubuntu# cd git-1
+root@ip-192-168-1-126:/home/ubuntu/git-1# git init
+root@ip-192-168-1-126:/home/ubuntu/git-1# ls
+root@ip-192-168-1-126:/home/ubuntu/git-1# git add f1.txt && git commit -m "new file"
+root@ip-192-168-1-126:/home/ubuntu/git-1# git push origin master
+root@ip-192-168-1-126:/home/ubuntu/git-1# git checkout -b features
+root@ip-192-168-1-126:/home/ubuntu/git-1# nano f2.txt
+root@ip-192-168-1-126:/home/ubuntu/git-1# ls
+root@ip-192-168-1-126:/home/ubuntu/git-1# git add f2.txt && git commit -m "new file"
+root@ip-192-168-1-126:/home/ubuntu/git-1# git push origin features
+root@ip-192-168-1-126:/home/ubuntu/git-1# git merge master features
+root@ip-192-168-1-126:/home/ubuntu/git-1# git pull -b features
+root@ip-192-168-1-126:/home/ubuntu/git-1# git checkout features
+root@ip-192-168-1-126:/home/ubuntu/git-1# touch g1.txt
+root@ip-192-168-1-126:/home/ubuntu/git-1# git add . && git commit -m "update"
+root@ip-192-168-1-126:/home/ubuntu/git-1# git push origin features
+
+
+
+
