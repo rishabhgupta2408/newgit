@@ -65,7 +65,7 @@ AWSCodePipeline_FullAcce
 
 
 
-
+git ---------
 root@ip-192-168-1-126:/home/ubuntu# ssh-keygen -t rsa -b 4096
 root@ip-192-168-1-126:/home/ubuntu# cat /root/.ssh/id_rsa.pub
 root@ip-192-168-1-126:/home/ubuntu# mkdir git-1
