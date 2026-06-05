@@ -1,0 +1,69 @@
+## buildspec.yml
+version: 0.2
+ 
+phases:
+  install:
+    commands:
+      - apt update
+      - apt install -y openjdk-8-jdk
+  
+  pre_build:
+    commands:
+      - ls -al
+      - pwd
+      - java -version
+  
+  build:
+    commands:
+      - chmod +x build.sh
+      - rm -rf ROOT.war
+      - ./build.sh
+      - ls -al
+  
+  post_build:
+    commands:
+      - ls -al
+  
+artifacts:
+  files:
+   - ROOT.war
+   - appspec.yml
+   - deploy.sh
+Robert Olejnik
+ 
+######appspec.yml
+ 
+ 
+version: 0.0
+os: linux
+ 
+files:
+  - source: ROOT.war
+    destination: /tmp/deploy
+ 
+hooks:
+  AfterInstall:
+    - location: deploy.sh
+      timeout: 300
+      runas: root
+ 
+#####deploy.yml
+ 
+#!/bin/bash
+sudo apt install -y tomcat9 tomcat9-admin
+rm -rf /var/lib/tomcat9/webapps/*
+#rm -rf "${TOMCAT_WEBAPPS_DIR:?}/"*
+mv /tmp/deploy/ROOT.war /var/lib/tomcat9/webapps
+# mv "$WAR_SOURCE" "$TOMCAT_WEBAPPS_DIR/"
+systemctl restart tomcat9
+ 
+sudo apt update
+sudo apt install -y ruby wget
+cd /home/ubuntu
+wget https://aws-codedeploy-<region>.s3.<region>.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto
+sudo systemctl status codedeploy-agent
+ 
+sudo systemctl restart codedeploy-agent
+sudo tail -n 200 /var/log/aws/codedeploy-agent/codedeploy-agent.log
