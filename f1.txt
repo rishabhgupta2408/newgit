@@ -86,6 +86,65 @@ root@ip-192-168-1-126:/home/ubuntu/git-1# touch g1.txt
 root@ip-192-168-1-126:/home/ubuntu/git-1# git add . && git commit -m "update"
 root@ip-192-168-1-126:/home/ubuntu/git-1# git push origin features
 
+master.................................. 
+ubuntu@ip-192-168-1-187:~$ sudo su
+root@ip-192-168-1-187:/home/ubuntu# apt update
+root@ip-192-168-1-187:/home/ubuntu# ssh-keygen
+root@ip-192-168-1-187:/home/ubuntu# cat /root/.ssh/id_rsa.pub
+root@ip-192-168-1-187:/home/ubuntu# cat /root/.ssh/id_rsa
+root@ip-192-168-1-187:/home/ubuntu# git clone https://github.com/aws-samples/eb-tomcat-snakes
+root@ip-192-168-1-187:/home/ubuntu# ll
+
+root@ip-192-168-1-187:/home/ubuntu# rm -rf .git
+root@ip-192-168-1-187:/home/ubuntu# git init
+root@ip-192-168-1-187:/home/ubuntu# git add . && git commit -m "adding files"
+root@ip-192-168-1-187:/home/ubuntu#  git config --global user.email "rishabh@ltm.com"
+root@ip-192-168-1-187:/home/ubuntu#  git config --global user.name "Rishabh"
+root@ip-192-168-1-187:/home/ubuntu# git add . && git commit -m "adding files"
+[root@ip-192-168-1-187:/home/ubuntu# git remote add github git@github.com:rishabhgupta2408/ltmjenkins.git
+root@ip-192-168-1-187:/home/ubuntu# git push github master
+
+sudo apt update
+compgen -u
+root@ip-192-168-1-187:/home/ubuntu# sudo apt install jenkins
+sudo usermod -aG sudo Jenkins
+sudi visudo
+Jenkins ALL
+su - Jenkins
+whoami
+sudo su 
+
+
+cat /var .................
+
+sudo su
+apt update
+compgen -u
+sudo adduser jenkins
+sudo usermod -aG sudo j
+sudo visudo
+whomai
+sudo su
+exit
+java 
+sudo su
+su-jenkins
+whoami
+su- jenkims
+whoami
+sudo su
+ll 
+mkdir .ssh
+chown jenkins:jenkins .ssh
+ll
+exit
+whoami
+cd .ssh
+nano authorized_keys
+
+
+
+
 
 
 
